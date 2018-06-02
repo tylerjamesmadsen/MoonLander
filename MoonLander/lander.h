@@ -9,6 +9,7 @@ class Lander
 private:
 	Point point;
 	int fuel;
+	Velocity velocity;
 
 public:
 	// constructors
@@ -17,7 +18,7 @@ public:
 	// getters
 	int getFuel()			const	{ return fuel; }
 	Point getPoint()		const	{ return point; }
-	// TODO: Velocity getVelocity	const	{ return velocity; }
+	Velocity getVelocity()	const	{ return velocity; }
 
 	// setters
 	void setFuel(const int FUEL);
