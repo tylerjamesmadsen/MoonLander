@@ -4,20 +4,21 @@
 class Velocity
 {
 private:
-	double dx = 0.0;
-	double dy = 0.0;
+	float dx;
+	float dy;
 
 public:
 	// constructors
-	Velocity() {};
+	Velocity();
+	Velocity(float dx, float dy);
 
 	// getters
-	double getDx()	const	{ return dx; }
-	double getDy()	const	{ return dy; }
+	float getDx()	const	{ return dx; }
+	float getDy()	const	{ return dy; }
 
 	// setters
-	void setDx(const double dx);
-	void setDy(const double dy);
+	void setDx(const float dx);
+	void setDy(const float dy);
 };
 
 #endif // !VELOCITY_H

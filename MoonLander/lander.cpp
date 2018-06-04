@@ -1,7 +1,19 @@
 #include "lander.h"
+#include "game.h"
+#include "velocity.h"
 
-// constructors TODO:
+// constructor
+Lander::Lander()
+{
+	// TODO
+	Point point = new Point();
+	
+	setLanded(false);
+	setAlive(true);
+	setFuel(FUEL);
 
+	Velocity velocity;
+}
 
 // setters
 void Lander::setFuel(const int fuel)
@@ -9,66 +21,59 @@ void Lander::setFuel(const int fuel)
 	this->fuel = fuel;
 }
 
-void Lander::setPoint(const Point point)
+void Lander::setLanded(const bool landed)
 {
-	this->point = point;
+	this->landed = landed;
 }
 
-void Lander::setAlive(const bool isAlive)
+void Lander::setAlive(const bool alive)
 {
-	this->isAlive = isAlive;
-}
-
-void Lander::setLanded(const bool hasLanded)
-{
-	this->hasLanded = hasLanded;
-}
-
-void Lander::setCanThrust(const bool canThrust)
-{
-	this->canThrust = canThrust;
+	this->alive = alive;
 }
 
 // boolean methods
 bool Lander::isAlive()
 {
-
+	// TODO
+	return true;
 }
 
 bool Lander::isLanded()
 {
-
+	// TODO
+	return false;
 }
 
 bool Lander::canThrust()
 {
-
+	// TODO
+	return true;
 }
 
 // methods
-void Lander::applyGravity(const double GRAVITY_AMOUNT)
+void Lander::applyGravity(const float gravity)
 {
-
+	// TODO
 }
 
 void Lander::advance()
 {
-
+	// TODO
 }
 
 void Lander::applyThrustBottom()
 {
-
+	// TODO
 }
 
 void Lander::applyThrustLeft()
 {
-
+	// TODO
 }
 
 void Lander::applyThrustRight()
 {
-
+	// TODO
 }
 
 void Lander::draw()
