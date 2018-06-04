@@ -4,26 +4,32 @@
 
 
 // setters
-void Lander::setFuel(const int FUEL)
+void Lander::setFuel(const int fuel)
 {
-
-}
-void Lander::setPoint(const Point POINT)
-{
-
+	this->fuel = fuel;
 }
 
-void Lander::setAlive(const bool IS_ALIVE)
+void Lander::setPoint(const Point point)
 {
-
+	this->point = point;
 }
 
-void Lander::setLanded(const bool HAS_LANDED)
+void Lander::setAlive(const bool isAlive)
 {
-
+	this->isAlive = isAlive;
 }
 
-// boolean properties
+void Lander::setLanded(const bool hasLanded)
+{
+	this->hasLanded = hasLanded;
+}
+
+void Lander::setCanThrust(const bool canThrust)
+{
+	this->canThrust = canThrust;
+}
+
+// boolean methods
 bool Lander::isAlive()
 {
 

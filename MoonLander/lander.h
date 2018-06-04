@@ -7,8 +7,8 @@
 class Lander
 {
 private:
-	Point point;
 	int fuel;
+	Point point;
 	Velocity velocity;
 
 public:
@@ -21,12 +21,18 @@ public:
 	Velocity getVelocity()	const	{ return velocity; }
 
 	// setters
-	void setFuel(const int FUEL);
-	void setPoint(const Point POINT);
-	void setAlive(const bool IS_ALIVE);
-	void setLanded(const bool HAS_LANDED);
+	void setFuel(const int fuel);
+	void setPoint(const Point point);
+	void setAlive(const bool isAlive);
+	void setLanded(const bool hasLanded);
+	void setCanThrust(const bool canThrust);
 
 	// boolean properties
+	bool isAlive;
+	bool hasLanded;
+	bool canThrust;
+
+	// boolean methods
 	bool isAlive();
 	bool isLanded();
 	bool canThrust();
