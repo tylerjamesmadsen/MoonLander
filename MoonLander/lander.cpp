@@ -6,8 +6,8 @@
 // constructor
 Lander::Lander()
 {
-	Point point = new Point();
-	
+	point.setX(float(random(-199.9f, 199.9f)));
+	point.setY(200.0f);
 	setLanded(false);
 	setAlive(true);
 	setFuel(FUEL);

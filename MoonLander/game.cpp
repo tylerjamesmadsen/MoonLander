@@ -115,12 +115,12 @@ void Game :: draw(const Interface & ui)
 
    if (lander.isLanded())
    {
-      drawText(Point(), "You have successfully landed!");
+      drawText(Point(0.0f, 100.0f), "You have successfully landed!");
    }
    
    if (!lander.isAlive())
    {
-      drawText(Point(), "You have crashed!");
+      drawText(Point(0.0f, 100.0f), "You have crashed!");
    }
    
    if (lander.canThrust())

@@ -20,7 +20,7 @@ public:
 	// getters
 	Point getPoint()		const { return point; }
 	Velocity getVelocity()	const { return velocity; }
-	int getFuel()			const	{ return fuel; }
+	int getFuel()			const { return fuel; }
 
 	// setters
 	void setLanded(const bool landed);
