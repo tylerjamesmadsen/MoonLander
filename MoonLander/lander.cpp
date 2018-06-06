@@ -6,7 +6,6 @@
 // constructor
 Lander::Lander()
 {
-	// TODO
 	Point point = new Point();
 	
 	setLanded(false);
@@ -35,14 +34,12 @@ void Lander::setAlive(const bool alive)
 // boolean methods
 bool Lander::isAlive()
 {
-	// TODO
-	return true;
+	return alive;
 }
 
 bool Lander::isLanded()
 {
-	// TODO
-	return false;
+	return landed;
 }
 
 bool Lander::canThrust()
@@ -60,18 +57,21 @@ bool Lander::canThrust()
 // methods
 void Lander::applyGravity(const float gravity)
 {
+	velocity.setDy(velocity.getDy() - gravity);
 	point.addY(-1.0f * gravity);
 }
 
 void Lander::advance()
 {
-	// TODO
+	point.addY(velocity.getDy());
+	point.addX(velocity.getDx());
 }
 
 void Lander::applyThrustBottom()
 {
 	if (this->canThrust())
 	{
+		velocity.setDy(velocity.getDy() + 0.3f);
 		point.addY(0.3f);
 		if (fuel < 3)
 		{
@@ -88,9 +88,9 @@ void Lander::applyThrustLeft()
 {
 	if (this->canThrust())
 	{
+		velocity.setDx(velocity.getDx() + 0.1f);
 		point.addX(0.1f);
 		fuel -= 1;
-
 	}
 }
 
@@ -98,7 +98,8 @@ void Lander::applyThrustRight()
 {
 	if (canThrust())
 	{
-		point.addX(-0.1f);
+		velocity.setDx(velocity.getDx() - 0.1f);
+		point.addX(0.1f);
 		fuel -= 1;
 	}
 }
