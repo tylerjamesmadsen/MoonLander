@@ -1,6 +1,7 @@
 #include "lander.h"
 #include "game.h"
 #include "velocity.h"
+#include "uiDraw.h"
 
 // constructor
 Lander::Lander()
@@ -46,14 +47,20 @@ bool Lander::isLanded()
 
 bool Lander::canThrust()
 {
-	// TODO
-	return true;
+	if (alive && !landed && fuel > 0)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
 
 // methods
 void Lander::applyGravity(const float gravity)
 {
-	// TODO
+	point.addY(-1.0f * gravity);
 }
 
 void Lander::advance()
@@ -63,20 +70,40 @@ void Lander::advance()
 
 void Lander::applyThrustBottom()
 {
-	// TODO
+	if (this->canThrust())
+	{
+		point.addY(0.3f);
+		if (fuel < 3)
+		{
+			fuel -= fuel;
+		}
+		else
+		{
+			fuel -= 3;
+		}
+	}
 }
 
 void Lander::applyThrustLeft()
 {
-	// TODO
+	if (this->canThrust())
+	{
+		point.addX(0.1f);
+		fuel -= 1;
+
+	}
 }
 
 void Lander::applyThrustRight()
 {
-	// TODO
+	if (canThrust())
+	{
+		point.addX(-0.1f);
+		fuel -= 1;
+	}
 }
 
 void Lander::draw()
 {
-
+	drawLander(point);
 }
